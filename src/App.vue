@@ -43,11 +43,59 @@ export default {
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{ item[2] }}</h5>
-              <li>Score: {{ item[9] }}</li>
-              <li>Genre: {{ item[10] }}</li>
-              <li>Source: {{ item[11] }}</li>
-              <li>Season: {{ item[8] }} {{ item[7] }}</li>
+              <h5 class="card-title fw-semibold">{{ item[2] }}</h5>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td colspan="4">
+                      <table class="table mb-0">
+                        <th scope="row">Rank:</th>
+                        <td>{{ item[14] }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">Score:</th>
+                        <td>{{ item[9] }}</td>
+                      </table>
+                    </td>
+                    <!-- <th scope="row">Rank:</th>
+                    <td>{{ item[14] }}</td>
+                    <th scope="row">Score:</th>
+                    <td>{{ item[9] }}</td> -->
+                  </tr>
+                  <tr>
+                    <th scope="row">Genre:</th>
+                    <td>{{ item[10] }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Season:</th>
+                    <td>{{ item[8] }} {{ item[7] }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Source:</th>
+                    <td>{{ item[11] }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
