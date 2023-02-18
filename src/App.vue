@@ -7,8 +7,23 @@ export default {
       filteredItems: animes.data,
       items: animes.data.slice(0, 10),
       page: 1,
-      maxPages: Math.ceil(animes.data.length/10)
+      maxPages: Math.ceil(animes.data.length/10),
+      sources: ['all genre', 'manga',  'original', 'visual_novel', 'novel', '4_koma_manga', 'light_novel', 'web_manga', 'web_novel', 'game', 'other', 'music', 'book', 'mixed_media', 'picture_book', 'card_game', 'radio'],
+      selectedsource: 'all genre'
     };
+  },
+  watch: {
+    selectedsource(newSource, old) {
+      console.log('masuk sini')
+      if (newSource === 'all genre') {
+        this.filteredItems = this.allItems
+      } else {
+        this.filteredItems = this.allItems.filter(item => item[11] === newSource)
+      }
+      this.items = this.filteredItems.slice(0,10)
+      this.page = 1
+      this.maxPages = Math.ceil(this.filteredItems.length/10)
+    }
   },
   methods: {
     changePage(newPage) {
@@ -26,7 +41,14 @@ export default {
         <a class="navbar-brand" href="#">Anime from MAL</a>
       </div>
     </nav>
-    <div class="row">
+    <div class="row justify-content-start mt-4">
+      <div class="col-3">
+        <select v-model="selectedsource" class="form-select" aria-label="Default select example">
+          <option v-for="source in sources" :key="source">{{ source }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-2">
       <div
         v-for="item in items"
         :key="item.id"
