@@ -1,4 +1,5 @@
 # Anime From MAL
+Link: https://yunastrian.github.io/anime-from-mal/
 
 This is simple web that show anime list from [MyAnimeList (MAL)](https://myanimelist.net/). I create this web because there is no filter based on anime source in MAL.
 
